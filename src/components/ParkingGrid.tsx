@@ -31,19 +31,36 @@ export const ParkingGrid = ({ spots, selectedSpot, onSpotClick, filterType }: Pa
   );
 
   return (
-    <div className="flex flex-col gap-8 p-6 bg-background rounded-lg">
+    <div className="flex flex-col gap-4 p-6 bg-background rounded-lg">
+      {/* Top Row */}
       {row1.length > 0 && renderRow(row1)}
+      
+      {/* Small Lane Separator */}
+      {row1.length > 0 && (
+        <div className="bg-[hsl(var(--aisle-bg))]/50 py-1 rounded"></div>
+      )}
+      
+      {/* Middle Two Rows Close Together */}
       {row2.length > 0 && renderRow(row2)}
+      {row3.length > 0 && (
+        <div className="mt-1">
+          {renderRow(row3)}
+        </div>
+      )}
       
       {/* Main Drive Aisle */}
       {(row2.length > 0 || row3.length > 0) && (
-        <div className="bg-[hsl(var(--aisle-bg))] text-white py-3 px-6 rounded text-center font-medium">
+        <div className="bg-[hsl(var(--aisle-bg))] text-white py-3 px-6 rounded text-center font-medium mt-2">
           Main Drive Aisle
         </div>
       )}
       
-      {row3.length > 0 && renderRow(row3)}
-      {row4.length > 0 && renderRow(row4)}
+      {/* Bottom Row */}
+      {row4.length > 0 && (
+        <div className="mt-2">
+          {renderRow(row4)}
+        </div>
+      )}
     </div>
   );
 };
