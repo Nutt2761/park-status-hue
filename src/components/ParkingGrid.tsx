@@ -35,9 +35,11 @@ export const ParkingGrid = ({ spots, selectedSpot, onSpotClick, filterType }: Pa
       {/* Top Row */}
       {row1.length > 0 && renderRow(row1)}
       
-      {/* Small Lane Separator */}
+      {/* Main Drive Aisle 1 */}
       {row1.length > 0 && (
-        <div className="bg-[hsl(var(--aisle-bg))]/50 py-1 rounded"></div>
+        <div className="bg-[hsl(var(--aisle-bg))] text-white py-3 px-6 rounded text-center font-medium">
+          Main Drive Aisle
+        </div>
       )}
       
       {/* Middle Two Rows Close Together */}
@@ -48,7 +50,7 @@ export const ParkingGrid = ({ spots, selectedSpot, onSpotClick, filterType }: Pa
         </div>
       )}
       
-      {/* Main Drive Aisle */}
+      {/* Main Drive Aisle 2 */}
       {(row2.length > 0 || row3.length > 0) && (
         <div className="bg-[hsl(var(--aisle-bg))] text-white py-3 px-6 rounded text-center font-medium mt-2">
           Main Drive Aisle
