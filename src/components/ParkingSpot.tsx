@@ -44,14 +44,14 @@ export const ParkingSpot = ({ spot, isSelected, onClick }: ParkingSpotProps) => 
     <button
       onClick={onClick}
       className={cn(
-        "relative flex flex-col items-center justify-center w-20 h-24 border-2 border-foreground/80 rounded-sm transition-all hover:scale-105 cursor-pointer",
+        "relative flex flex-col items-center justify-center w-12 h-16 border border-foreground/80 rounded-sm transition-all hover:scale-105 cursor-pointer",
         getStatusColor(),
-        isSelected && "ring-4 ring-primary"
+        isSelected && "ring-2 ring-primary"
       )}
     >
-      <Car className="w-6 h-6 text-foreground/70" />
+      <Car className="w-4 h-4 text-foreground/70" />
       {spot.status !== "available" && (
-        <span className="absolute bottom-1 text-[10px] font-medium text-foreground/80">
+        <span className="absolute bottom-0.5 text-[8px] font-medium text-foreground/80">
           {getStatusText()}
         </span>
       )}
